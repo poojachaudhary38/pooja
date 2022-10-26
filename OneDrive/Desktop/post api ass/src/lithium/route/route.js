@@ -35,15 +35,15 @@ let players =
 
    Router.post("/players",function (req,res) {
     console.log(players)
-    let newplayer = req.body;
+    let newplayers = req.body;
     let found = req.body.name;
-    console.log("new players found :- "newplayer")
+    console.log("new players found = "newplayers")
     for (i of players) {
         if (i.name == found) {
             return res.send("name already exists")
         }
     }
-    players.push(newplayer)
+    players.push(newplayers)
     res.send({msg: players, status: true})
    })
    module.exports = route;
